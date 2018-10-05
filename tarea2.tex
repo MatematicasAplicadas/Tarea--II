@@ -3,7 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{amsmath, amsfonts, amssymb}
-\usepackage{graphics}
+\usepackage{graphicx}
 \usepackage[usenames]{color}
 \usepackage[text={20cm,25cm},centering,top=1.5cm,bottom=1.5cm,letterpaper,showframe=false]{geometry}
 \renewcommand{\baselinestretch}{1.5}
@@ -106,16 +106,16 @@
             \color{azul}
             % Respuesta
             \begin{center}
-                \includegraphics[width=7cm]{img/ej7.png}
+                \includegraphics[width=4cm]{img/ej7.png}
             \end{center}
             La función $\displaystyle f(x)=\frac{1}{(x^2+y^2)^\lambda}$ no está
             definida cuando $x^2+y^2=0$, así que definimos una nueva región de
-            integración $D_\varepsilon = \left\{(x,y)\in\mathbb(R)^2 |
+            integración $D_\varepsilon = \left\{(x,y)\in\mathbb{R}^2 |
             \varepsilon\leq x^2+y^2\leq 1\right\}$ y hacemos $\varepsilon
-            \rightarrow 0$
+            \to 0$
             \[
                 \iint_D {\frac{dA}{\left(x^2+y^2\right)^\lambda}}
-                =lim_{\varepsilon\rightarrow 0}{
+                =\lim_{\varepsilon\to 0}{
                     \iint_{D_\varepsilon}{
                         \frac{dA}{\left(x^2+y^2\right)^\lambda}
                     }
@@ -130,7 +130,7 @@
                         \frac{r}{r^{2\lambda}}
                     \,dr}
                 \,d\theta}
-                =lim_{\varepsilon\rightarrow 0}{
+                =\lim_{\varepsilon\to 0}{
                     \int_{0}^{2\pi}{
                         \int_{\varepsilon}^{1}{
                             r^{1-2\lambda}
@@ -138,44 +138,45 @@
                     \,d\theta}
                 }
             \]
-            resolviendo la integral iterada (considerando $\lamda\ne 1$)
-            \begin{eqnarray*}
-                lim_{\varepsilon\rightarrow 0}{
+            resolviendo la integral iterada (considerando $\lambda \ne 1$)
+            \begin{align*}
+                \lim_{\varepsilon\to 0}{
                     \int_{0}^{2\pi}{
                         \int_{\varepsilon}^{1}{
                             r^{1-2\lambda}
                         \,dr}
                     \,d\theta}
                 }
-                &=lim_{\varepsilon\rightarrow 0}{
+                &=\lim_{\varepsilon\to 0}{
                     \int_{0}^{2\pi}{
                         \left[
                             \frac{r^{2-2\lambda}}
                                  {2-2\lambda}
                         \right]_{\varepsilon}^{1}
                     \,d\theta}
-                }\\
-                &=lim_{\varepsilon\rightarrow 0}{
+                }\\[.2cm]
+                &=\lim_{\varepsilon\to 0}{
                     \int_{0}^{2\pi}{
                         \frac{1-\varepsilon^{2(1-\lambda)}}
                              {2(1-\lambda)}
                     \,d\theta}
-                }\\
-                &=lim_{\varepsilon\rightarrow 0}{
+                }\\[.2cm]
+                &=\lim_{\varepsilon\to 0}{
                     \frac{2\pi[1-\varepsilon^{2(1-\lambda)}]}
                          {2(1-\lambda)}
-                }\\
-                &=lim_{\varepsilon\rightarrow 0}{
+                }\\[.2cm]
+                &=\lim_{\varepsilon\to 0}{
                     \frac{\pi[1-\varepsilon^{2(1-\lambda)}]}
                          {1-\lambda}
                 }
-            \end{eqnarray*}
-            Haciendo un análisis de ésta última expresión, concluimos que:\\
+            \end{align*}
+            Haciendo un análisis de ésta última expresión, concluimos que:
             \begin{itemize}
-                \item si $\lambda>1$, entonces $1-\lamda>0$ y
-                      $\varepsilon^{2(1-\lambda)}\rightarrow\infty$
-                \item es cuando $lambda<1$, entonces la integral converge.
+                \item si $\lambda>1$, entonces $1-\lambda>0$ y
+                    $\varepsilon^{2(1-\lambda)}\to\infty$ (diverge)
+                \item es cuando $\lambda<1$, entonces la integral converge.
             \end{itemize}
+            
         }
 
         % Ejercicio 8
@@ -191,7 +192,7 @@
             Notemos que la región de integración es infinita, como se ve en la
             siguiente figura
             \begin{center}
-                \includegraphics[width=7cm]{img/ej8.png}
+                \includegraphics[width=5cm]{img/ej8.png}
             \end{center}
             Así que la integral iterada a resolver es
             \[
@@ -203,38 +204,38 @@
             \]
             Sustituimos ese infinito con una nueva variable $t$ y hacemos que
             ésta tienda hacia infinito
-            \begin{eqnarray*}
-                lim_{t\rightarrow\infty}{
+            \begin{align*}
+                \lim_{t\to\infty}{
                     \int_{0}^{t}{
                         \int_{0}^{1}{
                             xye^{-(x^2+y^2)}
                         \,dy}
                     \,dx}
                 }
-                &=lim_{t\rightarrow\infty}{
+                &=\lim_{t\to\infty}{
                     \int_{0}^{t}{
                         x\left[-\frac{1}{2}e^{-(x^2-y^2)}\right]_0^1
                     \,dx}
-                }\\
-                &=-\frac{1}{2}lim_{t\rightarrow\infty}{
+                }\\[.3cm]
+                &=-\frac{1}{2}\lim_{t\to\infty}{
                     \int_{0}^{t}{
                         x\left[e^{-(x^2+1)}-e^{-x^2}\right]
                     \,dx}
-                }\\
-                &=-\frac{1}{2}lim_{t\rightarrow\infty}{
+                }\\[.3cm]
+                &=-\frac{1}{2}\lim_{t\to\infty}{
                     \int_{0}^{t}{
                         xe^{-x^2}\left[e^{-1}-1\right]
                     \,dx}
-                }\\
-                &=-\frac{e^{-1}-1}{2}lim_{t\rightarrow\infty}{
+                }\\[.3cm]
+                &=-\frac{e^{-1}-1}{2}\lim_{t\to\infty}{
                     -\frac{1}{2}\left[-\frac{1}{2}e^{-x^2}\right]_{0}^{t}
-                }\\
-                &=\frac{e^{-1}-1}{4}lim_{t\rightarrow\infty}{
+                }\\[.3cm]
+                &=\frac{e^{-1}-1}{4}\lim_{t\to\infty}{
                     \left(e^{-t^2}-1\right)
                 }
-            \end{eqnarray*}
+            \end{align*}
             Simplificamos la expresión $\frac{e^{-1}-1}{4}=\frac{1-e}{4e}$ y al
-            calcular el límite $e^{-t^2}\rightarrow 0$ por lo que el límite es
+            calcular el límite $e^{-t^2}\to 0$ por lo que el límite es
             $-1$ y el resultado de la integral es $\displaystyle\frac{e-1}{4e}$
         }
     \end{enumerate}

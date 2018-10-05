@@ -105,6 +105,75 @@
 
             \color{azul}
             % Respuesta
+            \begin{center}
+                \includegraphics[width=7cm]{img/ej7.png}
+            \end{center}
+            La función $\displaystyle f(x)=\frac{1}{(x^2+y^2)^\lambda}$ no está
+            definida cuando $x^2+y^2=0$, así que definimos una nueva región de
+            integración $D_\varepsilon = \left\{(x,y)\in\mathbb(R)^2 |
+            \varepsilon\leq x^2+y^2\leq 1\right\}$ y hacemos $\varepsilon
+            \rightarrow 0$
+            \[
+                \iint_D {\frac{dA}{\left(x^2+y^2\right)^\lambda}}
+                =lim_{\varepsilon\rightarrow 0}{
+                    \iint_{D_\varepsilon}{
+                        \frac{dA}{\left(x^2+y^2\right)^\lambda}
+                    }
+                }
+            \]
+            para resolver la integral, conviene hacer una transformación a
+            coordenadas polares
+            \[
+                \iint_D {\frac{dA}{\left(x^2+y^2\right)^\lambda}}
+                =\int_{0}^{2\pi}{
+                    \int_{0}^{1}{
+                        \frac{r}{r^{2\lambda}}
+                    \,dr}
+                \,d\theta}
+                =lim_{\varepsilon\rightarrow 0}{
+                    \int_{0}^{2\pi}{
+                        \int_{\varepsilon}^{1}{
+                            r^{1-2\lambda}
+                        \,dr}
+                    \,d\theta}
+                }
+            \]
+            resolviendo la integral iterada (considerando $\lamda\ne 1$)
+            \begin{eqnarray*}
+                lim_{\varepsilon\rightarrow 0}{
+                    \int_{0}^{2\pi}{
+                        \int_{\varepsilon}^{1}{
+                            r^{1-2\lambda}
+                        \,dr}
+                    \,d\theta}
+                }
+                &=lim_{\varepsilon\rightarrow 0}{
+                    \int_{0}^{2\pi}{
+                        \left[
+                            \frac{r^{2-2\lambda}}
+                                 {2-2\lambda}
+                        \right]_{\varepsilon}^{1}
+                    \,d\theta}
+                }\\
+                &=lim_{\varepsilon\rightarrow 0}{
+                    \int_{0}^{2\pi}{
+                        \frac{1-\varepsilon^{2(1-\lambda)}}
+                             {2(1-\lambda)}
+                    \,d\theta}
+                }\\
+                &=lim_{\varepsilon\rightarrow 0}{
+                    \frac{2\pi[1-\varepsilon^{2(1-\lambda)}]}
+                         {2(1-\lambda)}
+                }\\
+                &=lim_{\varepsilon\rightarrow 0}{
+                    \frac{\pi[1-\varepsilon^{2(1-\lambda)}]}
+                         {1-\lambda}
+                }
+            \end{eqnarray*}
+            Haciendo un análisis de ésta última expresión, concluimos que:\\
+            si $\lambda>1$, entonces $1-\lamda>0$ y
+            $\varepsilon^{2(1-\lambda)}\rightarrow\infty$\\
+            es cuando $lambda<1$, entonces la integral converge.
         }
 
         % Ejercicio 8

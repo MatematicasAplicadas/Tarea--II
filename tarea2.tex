@@ -171,9 +171,11 @@
                 }
             \end{eqnarray*}
             Haciendo un análisis de ésta última expresión, concluimos que:\\
-            si $\lambda>1$, entonces $1-\lamda>0$ y
-            $\varepsilon^{2(1-\lambda)}\rightarrow\infty$\\
-            es cuando $lambda<1$, entonces la integral converge.
+            \begin{itemize}
+                \item si $\lambda>1$, entonces $1-\lamda>0$ y
+                      $\varepsilon^{2(1-\lambda)}\rightarrow\infty$
+                \item es cuando $lambda<1$, entonces la integral converge.
+            \end{itemize}
         }
 
         % Ejercicio 8
@@ -186,6 +188,54 @@
 
             \color{azul}
             % Respuesta
+            Notemos que la región de integración es infinita, como se ve en la
+            siguiente figura
+            \begin{center}
+                \includegraphics[width=7cm]{img/ej8.png}
+            \end{center}
+            Así que la integral iterada a resolver es
+            \[
+                \int_{0}^{\infty}{
+                    \int_{0}^{1}{
+                        xye^{-(x^2+y^2)}
+                    \,dy}
+                \,dx}
+            \]
+            Sustituimos ese infinito con una nueva variable $t$ y hacemos que
+            ésta tienda hacia infinito
+            \begin{eqnarray*}
+                lim_{t\rightarrow\infty}{
+                    \int_{0}^{t}{
+                        \int_{0}^{1}{
+                            xye^{-(x^2+y^2)}
+                        \,dy}
+                    \,dx}
+                }
+                &=lim_{t\rightarrow\infty}{
+                    \int_{0}^{t}{
+                        x\left[-\frac{1}{2}e^{-(x^2-y^2)}\right]_0^1
+                    \,dx}
+                }\\
+                &=-\frac{1}{2}lim_{t\rightarrow\infty}{
+                    \int_{0}^{t}{
+                        x\left[e^{-(x^2+1)}-e^{-x^2}\right]
+                    \,dx}
+                }\\
+                &=-\frac{1}{2}lim_{t\rightarrow\infty}{
+                    \int_{0}^{t}{
+                        xe^{-x^2}\left[e^{-1}-1\right]
+                    \,dx}
+                }\\
+                &=-\frac{e^{-1}-1}{2}lim_{t\rightarrow\infty}{
+                    -\frac{1}{2}\left[-\frac{1}{2}e^{-x^2}\right]_{0}^{t}
+                }\\
+                &=\frac{e^{-1}-1}{4}lim_{t\rightarrow\infty}{
+                    \left(e^{-t^2}-1\right)
+                }
+            \end{eqnarray*}
+            Simplificamos la expresión $\frac{e^{-1}-1}{4}=\frac{1-e}{4e}$ y al
+            calcular el límite $e^{-t^2}\rightarrow 0$ por lo que el límite es
+            $-1$ y el resultado de la integral es $\displaystyle\frac{e-1}{4e}$
         }
     \end{enumerate}
 \end{document}

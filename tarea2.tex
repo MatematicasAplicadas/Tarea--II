@@ -22,14 +22,33 @@
     \date{Miércoles 10 de octubre de 2018}
     \maketitle
     \begin{enumerate}
+    
         % Ejercicio 1
         \item {
-            Encontrar la imagen de un triángulo con vérticies $(0,0)$, $(1,1)$
+            Encontrar la imagen de un triángulo con vértices $(0,0)$, $(1,1)$
             y $(0,1)$ bajo la transformación $x=u^2$ y $y=v$.
 
             \color{azul}
-            % Respuesta
-        }
+            Despejando $u$ de $x=u^2$, tenemos que $u=\sqrt{x}$ y que $v = y$\\
+            De ahí, tendríamos que la transformación es:\\
+            $T(x,y) = (\sqrt{x} , y)$\\
+            
+           	Aplicamos la transformación a sus vértices\\
+            $T(0,0) = (\sqrt{0}, 0) = (0,0)$\\
+            $T(1,1) = (\sqrt{1}, 1) = (1,1)$\\
+            $T(0,1) = (\sqrt{0}, 1) = (0,1)$\\
+            
+            Por lo tanto, la imagen del triángulo es el mismo triángulo antes de ser                           transformado\\
+          
+            %%\begin{center}
+            %% \includegraphics[width=8cm]{ejercicio1.png}
+             %%\includegraphics[width=8cm]{ejercicio1-1.png}
+        	%%\end{center}  
+                	
+        	En la imagen izquierda vemos el triángulo original, y en la derecha vemos 			la imagen del triángulo bajo la transformación.\\
+	}        
+   
+
 
         % Ejercicio 2
         \item {
@@ -41,7 +60,62 @@
             $3x-y=1$ y $3x-y=8$-
 
             \color{azul}
-            % Respuesta
+            El paralelogramo $D$ lo podemos ver como la siguiente imagen:\\
+            %%\begin{center}
+            %% \includegraphics[width=8cm]{ejercicio2.png}
+        	%%\end{center} 
+        	
+        	Para facilitar la integral, ralizaremos un cambio de variable y una transformación lineal con D.\\
+        	Obtenemos el Jacobiano de la siguiente forma:\\
+	$\begin{bmatrix}
+    	\frac{\partial x}{\partial u}  & \frac{\partial x}{\partial v}\\
+    	\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}\\
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+    	-\frac{1}{5}  & \frac{2}{5}\\
+    	-\frac{3}{5} & \frac{1}{5}\\
+	\end{bmatrix}
+	=
+	-\frac{7}{25}
+	$      	
+	
+        	Para la transformación, tomamos $u = x-2y$ y $v= 3x-y$.\\ 
+        	Despejando con un sistema de ecuaciones de u y v, tenemos que $x = -(\frac{u-2v}{5})$ y  $y = -(\frac{3u-v}{5})$ \\
+        	
+        	De ahí, si aplicamos la transformación en los lados del paralelogramo tenemos:\\
+        	$T(x-2y=0) \Rightarrow (\frac{-u+2v}{5}) + 2(\frac{3u-v}{5}) = \frac{-u+2v+6u-2v}{5} = \frac{5u}{5} \Rightarrow u = 0$\\
+        	$T(x-2y=4) \Rightarrow (\frac{-u+2v}{5}) + 2(\frac{3u-v}{5}) = \frac{-u+2v+6u-2v}{5} = \frac{5u}{5} \Rightarrow u = 4$\\
+        	$T(3x-y=1) \Rightarrow -3(\frac{u-2v}{5}) + (\frac{3u-v}{5}) = \frac{-3u+6v+3u-v}{5} = \frac{5v}{5} \Rightarrow v = 1$\\
+    		$T(3x-y=8) \Rightarrow -3(\frac{u-2v}{5}) + (\frac{3u-v}{5}) = \frac{-3u+6v+3u-v}{5} = \frac{5v}{5} \Rightarrow v = 8$\\
+        	
+        	La imagen del paralelogramo bajo la transformación es como la siguiente imagen, vemos que es un cuadrado, así que los límites de u y v son sencillos.\\
+            %\begin{center}
+             %%\includegraphics[width=8cm]{ejercicio2-1.png}
+        	%%\end{center} 
+
+	De ahí, podemos resolver a nuestra integral doble como:\\
+	
+	$\int_{1}^{8}\int_{0}^{4}-\frac{7}{25}e^{\frac{u}{v}}dudv$\\
+	
+	(Usando integración por sustitución tomando $s =\frac{u}{v}$, resolvemos directamente du) Tenemos:\\
+	$= -\frac{7}{25} \int_{1}^{8} v(e^{\frac{4}{v}} -1)dv$\\
+	$\int_{1}^{8} v(e^{\frac{4}{v}} -1)dv = \int_{1}^{8} ve^{\frac{4}{v}}dv - \int_{1}^{8} vdv$\\
+	
+	$\int_{1}^{8} vdv = \frac{v^2}{2}\Big|_1^8 = \frac{63}{2}$\\
+	
+	(Usando integración por sustitución tomando $t =\frac{4}{v}$,$dt = -\frac{v^2}{4}dv$ y $v= \frac{4}{t}$) Tenemos:\\
+	$\int_{1}^{8} ve^{\frac{4}{v}}dv = -16\int_{1}^{8} \frac{e^{t}}{t^3}dt$\\
+	(Usando integración por partes donde $u = e^t$ y $dv = \frac{1}{t^3})$)\\
+	$\int_{1}^{8} \frac{e^{t}}{t^3}dt = -\frac{e^t}{2t^2} + \int-\frac{e^t}{2t^2}dt$\\
+	(Usando integración por partes donde $u = e^t$ y $dv = \frac{1}{2t^2})$)\\
+	$\int-\frac{e^t}{2t^2} = -\frac{1}{2} (-\frac{e^t}{t} + \int\frac{e^t}{t}dt)$\\
+	(Usando la definición $Ei(t) = \int\frac{e^t}{t}dt$, resolvemos el resto de integral. También regresamos a los valores originales)\\
+	$\int_{1}^{8} ve^{\frac{4}{v}}dv = [-16(-\frac{1}{32}e^{\frac{4}{v}}v^2 + \frac{1}{2}(-\frac{1}{4})e^{\frac{4}{v}}v + Ei(\frac{4}{v}))]\Big|_1^8$\\
+	
+	De todo lo anterior, el resultado sería:\\
+	$\int_{1}^{8}\int_{0}^{4}-\frac{7}{25}e^{\frac{u}{v}}dudv = (-\frac{7}{25})(48\sqrt{e} - 8Ei(\frac{1}{2}) - 32 - \frac{5e^4 - 16Ei(4)}{2})$\\
+	       
         }
 
         % Ejercicio 3
@@ -52,7 +126,27 @@
             \]
 
             \color{azul}
-            % Respuesta
+            Hallar el volumen de forma típica nos daría una integral triple bastante compleja, así que para auxiliarnos, transformamos la elipsoide a coordenas esféricas y realizamos un cambio de variables.\\
+           %\begin{center}
+             %%\includegraphics[width=8cm]{elipsoide.png}
+        	%%\end{center} 
+        	
+        	Tomamos las coordenadas esféricas:\\
+        	$x = ar\sin\gamma\cos\theta$\\
+        	$y = br\sin\gamma\sin\theta$\\
+        	$x = cr\cos\gamma$\\
+        	
+        	El jacobiano sería la multiplicación de $abc$ con el jacobiano de coordenadas esféricas que vimos en clase es $r^2\sin\gamma$. De ahí, el jacobiano es $abcr^2\sin\gamma$\\
+        	
+        	El elipsoide es simétrico respecto al origen, los ejes y los planos de coordenadas. Además las secciones con planos paralelos a los coordenados son elipses (caso particular: circunferencia). De esta forma si vemos al elipsoide en coordenas esféricas podemos representar su volumen de esta manera:\\
+        	$\int_{0}^{1}\int_{0}^{2\pi}\int_{0}^{\pi}abcr^2\sin\gamma d\gamma d\theta dr$\\
+        	
+        	Debido a que las variables son independientes una de otra podemos resolver la integral así:\\
+        	$(abc)(\int_{0}^{1}r^2 dr)(\int_{0}^{2\pi} d\theta)(\int_{0}^{\pi}\sin\gamma d\gamma) = (abc)(\frac{r^3}{3}\Big|_0^1)(\theta\Big|_0^{2\pi})(-\cos\gamma\Big|_0^{\pi}) = (abc)(\frac{1}{3})(2\pi)(2) = \frac{4}{3}\pi abc$\\
+        	
+        	Por lo tanto, el volumen del elipsoide es $\frac{4}{3}\pi abc$.\\
+        	
+
         }
 
         % Ejercicio 4

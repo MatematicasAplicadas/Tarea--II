@@ -42,6 +42,7 @@
 	    }
 
         % Ejercicio 2
+        \pagebreak
         \item {
             Calcular
             \[
@@ -53,11 +54,11 @@
             \color{azul}
             El paralelogramo $D$ lo podemos ver como la siguiente imagen:
             \begin{center}
-                \includegraphics[width=8cm]{img/ejercicio2.png}
+                \includegraphics[width=6cm]{img/ejercicio2.png}
          	\end{center}
+             Para facilitar la integral, realizaremos un cambio de variable
+             y una transformación lineal con $D$.
 
-             Para facilitar la integral, realizaremos un cambio de variable y una
-             transformación lineal con D.\\
              Obtenemos el Jacobiano de la siguiente forma:
              \[
                  \begin{bmatrix}
@@ -77,7 +78,7 @@
              \]
              Para la transformación, tomamos $u = x-2y$ y $v= 3x-y$.
             
-             Despejando con un sistema de ecuaciones de u y v, tenemos que
+             Despejando con un sistema de ecuaciones de $u$ y $v$, tenemos que
              $x = -(\frac{u-2v}{5})$ y  $y = -(\frac{3u-v}{5})$
 
              De ahí, si aplicamos la transformación en los lados del
@@ -91,35 +92,88 @@
              $$T(3x-y=8) \Rightarrow -3(\frac{u-2v}{5}) + (\frac{3u-v}{5}) =
              \frac{-3u+6v+3u-v}{5} = \frac{5v}{5} \Rightarrow v = 8$$
 
-         	La imagen del paralelogramo bajo la transformación es como la siguiente imagen, vemos que es un cuadrado, así que los límites de u y v son sencillos.
+             La imagen del paralelogramo bajo la transformación es como la
+             siguiente imagen, vemos que es un cuadrado, así que los límites
+             de $u$ y $v$ son sencillos.
              \begin{center}
-                 \includegraphics[width=6cm]{img/ejercicio2-1.png}
+                 \includegraphics[width=5cm]{img/ejercicio2-1.png}
          	\end{center}
              De ahí, podemos resolver a nuestra integral doble como:
-
-             $$\int_{1}^{8}\int_{0}^{4}\frac{1}{5}e^{\frac{u}{v}}\,du\,dv$$
-            
-             (Usando integración por sustitución tomando $s =\frac{u}{v}$,
-             resolvemos directamente $du$) Tenemos:
-
-             $$= \frac{1}{5} \int_{1}^{8} v(e^{\frac{4}{v}} -1)dv$$
-
-             $$\int_{1}^{8} v(e^{\frac{4}{v}} -1)dv = \int_{1}^{8}
-             ve^{\frac{4}{v}}dv - \int_{1}^{8} vdv$$
-
-             $$\int_{1}^{8} vdv = \frac{v^2}{2}\Big|_1^8 = \frac{63}{2}$$
-            
-             (Usando integración por sustitución tomando $t =\frac{4}{v}$, $dt = -\frac{v^2}{4}dv$ y $v= \frac{4}{t}$) Tenemos:
-             $$\int_{1}^{8} ve^{\frac{4}{v}}dv = -16\int_{1}^{8} \frac{e^{t}}{t^3}dt$$
-             (Usando integración por partes donde $u = e^t$ y $dv = \frac{1}{t^3}$)
-             $\int_{1}^{8} \frac{e^{t}}{t^3}dt = -\frac{e^t}{2t^2} + \int-\frac{e^t}{2t^2}dt$\\
-             (Usando integración por partes donde $u = e^t$ y $dv = \frac{1}{2t^2}$)\\
-             $\int-\frac{e^t}{2t^2} = -\frac{1}{2} (-\frac{e^t}{t} + \int\frac{e^t}{t}dt)$\\
-             (Usando la definición $Ei(t) = \int\frac{e^t}{t}dt$, resolvemos el resto de integral. También regresamos a los valores originales)\\
-             $\int_{1}^{8} ve^{\frac{4}{v}}dv = [-16(-\frac{1}{32}e^{\frac{4}{v}}v^2 + \frac{1}{2}(-\frac{1}{4})e^{\frac{4}{v}}v + Ei(\frac{4}{v}))]\Big|_1^8$\\
-
-             De todo lo anterior, el resultado sería:\\
-             $\int_{1}^{8}\int_{0}^{4}-\frac{7}{25}e^{\frac{u}{v}}dudv = (\frac{1}{5})(48\sqrt{e} - 8Ei(\frac{1}{2}) - 32 - \frac{5e^4 - 16Ei(4)}{2})$
+             \[
+                \int_{1}^{8}{
+                    \int_{0}^{4}{
+                        \frac{1}{5} e^{\frac{u}{v}}
+                    \,du}
+                \,dv}
+            \]
+             Usando integración por sustitución tomando $s =\frac{u}{v}$,
+             resolvemos directamente $du$
+             \[
+                = \frac{1}{5} \int_{1}^{8}{
+                    v\left(e^{\frac{4}{v}} -1\right)
+                \,dv}
+            \]
+            \[
+                \int_{1}^{8}{
+                    v\left(e^{\frac{4}{v}} -1\right)
+                \,dv}
+                =
+                \int_{1}^{8}{
+                    ve^{\frac{4}{v}}
+                \,dv}
+                -
+                \int_{1}^{8}{v\,dv}
+            \]
+            \[
+                \int_{1}^{8}{v\,dv}
+                = \frac{v^2}{2}\Big|_1^8
+                = \frac{63}{2}
+            \]
+             Usando integración por sustitución tomando $t =\frac{4}{v}$,
+             $dt = -\frac{v^2}{4}dv$ y $v= \frac{4}{t}$
+             \[
+                \int_{1}^{8}{ve^{\frac{4}{v}}\,dv}
+                = -16\int_{1}^{8}{\frac{e^{t}}{t^3}\,dt}
+            \]
+            Usando integración por partes donde $u = e^t$ y
+            $dv = \frac{1}{t^3}$
+            \[
+                \int_{1}^{8}{\frac{e^{t}}{t^3}\,dt}
+                = -\frac{e^t}{2t^2} + \int{-\frac{e^t}{2t^2}\,dt}
+            \]
+            Nuevamente por integración por partes donde $u = e^t$ y
+            $dv = \frac{1}{2t^2}$
+            \[
+                \int{-\frac{e^t}{2t^2}\,dt}
+                = -\frac{1}{2} \left(
+                    -\frac{e^t}{t} + \int{\frac{e^t}{t}\,dt}
+                \right)
+            \]
+            Finalmente, con la definición $Ei(t) = \int\frac{e^t}{t}dt$,
+            resolvemos el resto de integral. También regresamos a los valores
+            originales
+            \[
+                \int_{1}^{8}{ve^{\frac{4}{v}}\,dv}
+                = \left[
+                    -16\left(
+                        -\frac{1}{32}e^{\frac{4}{v}}v^2
+                        +\frac{1}{2}\left(-\frac{1}{4}\right)e^{\frac{4}{v}}v
+                        +Ei\left(\frac{4}{v}\right)
+                    \right)
+                \right]_1^8
+            \]
+            De todo lo anterior, el resultado sería:
+            \[
+                \int_{1}^{8}{
+                    \int_{0}^{4}{
+                        -\frac{7}{25}e^{\frac{u}{v}}
+                    \,du}
+                \,dv}
+                =\left(\frac{1}{5}\right)\left(48\sqrt{e}
+                -8Ei\left(\frac{1}{2}\right)
+                -32
+                -\frac{5e^4 - 16Ei(4)}{2}\right)
+            \]
         }
 
         % Ejercicio 3

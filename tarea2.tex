@@ -19,7 +19,7 @@
     \author{Careaga Carrillo Juan Manuel\\
             Quiróz Castañeda Edgar\\
             Soto Corderi Sandra del Mar}
-    \date{Miércoles 10 de octubre de 2018}
+    \date{Viernes 12 de octubre de 2018}
     \maketitle
     \begin{enumerate}
 
@@ -29,7 +29,8 @@
             y $(0,1)$ bajo la transformación $x=u^2$ y $y=v$.
 
             \color{azul}
-          Aplicamos la transformación a varios puntos del triángulo y obtenemos lo siguiente:
+          Aplicamos la transformación a varios puntos del triángulo y obtenemos
+          lo siguiente:
             \begin{center}
                 \includegraphics[width=6cm]{img/ejercicio1-1.png}
                 \hspace{.5cm}
@@ -38,7 +39,12 @@
             En la imagen izquierda vemos el triángulo original, y en la derecha
             vemos la imagen del triángulo bajo la transformación.
             
-            Podemos observar que la transformación convirtió el lado del triángulo que iba de $(0,0)$ a $(1,1)$ en una curva, ya que $x=u^2$, el resto de los lados parecen verse no afectados, pero los puntos tomados si cambiaron en posición, recorriéndose, ya que al tomar número decimales al cuadrado obtenemos coordenadas menores a las originales.
+            Podemos observar que la transformación convirtió el lado del
+            triángulo que iba de $(0,0)$ a $(1,1)$ en una curva, ya que $x=u^2$,
+            el resto de los lados parecen verse no afectados, pero los puntos
+            tomados si cambiaron en posición, recorriéndose, ya que al tomar
+            número decimales al cuadrado obtenemos coordenadas menores a las
+            originales.
 	    }
 
         % Ejercicio 2
@@ -190,7 +196,8 @@
             \begin{center}
                 \includegraphics[width=10cm]{img/elipsoide.png}
         	\end{center}
-            Tomamos la siguiente transformación, basada en coordenadas esféricas:
+            Tomamos la siguiente transformación, basada en coordenadas
+            esféricas:
             \begin{align*}
                 x &= ar\sen\gamma\cos{\theta}\\
                 y &= br\sen\gamma\sen{\theta}\\
@@ -266,19 +273,17 @@
             que representa el ángulo $\frac{\theta}{2\pi}$. Por lo que es área
             sería $\frac{\pi r ^2\theta}{2\pi} = \frac{r^2\theta}{2}$.\\
             Entonce la suma de Riemann sería
-
             \[\sum_{i = 1}^n {\frac{r(\theta *)^2}{2}}\Delta \theta\]
-
             Y el área bajo la curva polar sería
-
             \[
                 \lim_{n \to \infty}\sum_{i = 1}^n {\frac{r(\theta *)}{2}}\Delta \theta
                 = \frac{1}{2}\int_\beta^\alpha {r(\theta)^2}d\theta
             \]
-
             Volviendo a la lemniscata, notemos que es simétrica respecto al eje
             $x$ y al eje $y$, por lo que se puede considerar sólo el primer
-            cuandrante y multiplicar lo obtenido por 4 para tener el área total.\\
+            cuandrante y multiplicar lo obtenido por 4 para tener el área
+            total.
+
             Además, la función que se tiene del radio $r = a\sqrt{2\cos2\theta}$
             no está definida para valores negativos de $\cos2\theta$.
             \[
@@ -317,9 +322,11 @@
 
             \color{azul}
             Pasando a coordenadas cilíndricas.\\
-            Se tiene que $r^2 = x^2 + y^2$, $x = r\cos(\theta)$, $y = r\sen(\theta)$
+            Se tiene que $r^2 = x^2 + y^2$, $x = r\cos(\theta)$,
+            $y = r\sen(\theta)$
             y $z = z$.\\
-            La función $\sqrt{x^2+y^2}$ se vuelve $r \cdot r = r^2$, por el jacobiano.\\
+            La función $\sqrt{x^2+y^2}$ se vuelve $r \cdot r = r^2$, por el
+            jacobiano.\\
             Los límites de $z$ se vuelven 0 y $r^2$.
 
             Para los límites de $r$ y de $\theta$ notemos que
@@ -377,17 +384,20 @@
             \begin{align*}
                 &\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}{\frac{32\cos^5(\theta)}{5}d\theta}
                 = \frac{32}{5} \int{\cos^5(\theta)d\theta}
-                = \frac{32}{5} \int{(\cos^2(\theta))^2\cos(\theta)d\theta}\\
+                = \frac{32}{5} \int{(\cos^2(\theta))^2\cos(\theta)d\theta}\\[0.3cm]
                 &= \frac{32}{5} \int{(1-\sen^2(\theta))^2\cos(\theta)d\theta}
                 = \frac{32}{5} \int{(1-u^2)^2du}
-                = \frac{32}{5} \int{(1-2u^2+u^4)du}\\
+                = \frac{32}{5} \int{(1-2u^2+u^4)du}\\[0.3cm]
                 &= \frac{32}{5} (u - \frac{2u^3}{3} + \frac{u^5}{5})
                 = \frac{32}{5} (\sen(\theta) - \frac{2\sen(\theta)^3}{3}
-                + \frac{\sen(\theta)^5}{5}) \Big |_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\\
+                + \frac{\sen(\theta)^5}{5}) \Big |_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\\[0.3cm]
                 &= \frac{32}{5} ((1-\frac{2}{3}+\frac{1}{5})-(-1+\frac{2}{3}-\frac{1}{5}))
-                = \frac{32}{5} \cdot 2(1-\frac{2}{3}+\frac{1}{5})\\
-                &= \frac{32}{5} \cdot \frac{8}{15} = \frac{256}{75}
+                = \frac{32}{5} \cdot 2(1-\frac{2}{3}+\frac{1}{5})\\[0.3cm]
+                &= \frac{32}{5} \cdot \frac{8}{15} \cdot 2 = \frac{512}{75}
             \end{align*}
+            \begin{center}
+                \includegraphics[width=6cm]{img/ej5.png}
+            \end{center}
 	    }
 
         % Ejercicio 6
@@ -398,7 +408,51 @@
             cuadrado de la distancia de $P$ al centro de la esfera.
 
             \color{azul}
-            % Respuesta
+            Sabemos de la tarea anterior, que la masa de un sólido se calcula
+            obteniendo la integral triple de la densidad del mismo. Sabemos que
+            el centro de la esfera está en el origen, así tenemos que la
+            densidad es la distancia $d(0,P) = \sqrt{x^2+y^2+z^2}$ por una
+            constante $k$, ya que es directamente proporcional.
+            
+            De ahí, para obtener la masa tendríamos que obtener: 
+            $\iiint_{W}k(x^2+y^2+z^2)dW$
+            
+            Transformamos a coordenadas esféricas, el jacobiano es
+            $r^2\sen\theta$ y tenemos que $r^2 = x^2+y^2+z^2$
+            Estamos considernado el solido entre dos esferas completas, así que
+            podemos expresar la integral de la siguiente forma:		
+				\[
+                \int_{0}^{\sqrt{2}}{
+                    \int_{0}^{2\pi}{
+                        \int_{0}^{\pi}{
+                           (kr^4\sen\gamma)
+                        \,d\theta}
+                    \,d\gamma}
+                \,dr}
+            \]
+            
+            Ya que las funciones son independientes unas de otras podemos
+            resolver la integral como el producto de tres integrales
+            independientes por una constante $k$:
+			 \[
+                (k)
+                \left(\int_{0}^{\sqrt{2}}r^4 dr\right)
+                \left(\int_{0}^{2\pi} d\theta\right)
+                \left(\int_{0}^{\pi}\sen{\gamma} d\gamma\right)
+                =
+                (k)
+                \left(\frac{r^5}{5}\Big|_0^{\sqrt{2}}\right)
+                \left(\theta\Big|_0^{2\pi}\right)
+                \left(-\cos{\gamma}\Big|_0^{\pi}\right)
+                =
+                (k)\left(\frac{2^{\frac{5}{2}} - 1}{5}\right)
+                \left(2\pi\right)(2)
+                =
+               (4\pi k)\left(\frac{2^{\frac{5}{2}} - 1}{5}\right)
+            \]           
+           
+           Por lo tanto, la masa del sólido es
+           $\displaystyle (4\pi k)\left(\frac{2^{\frac{5}{2}} - 1}{5}\right)$
         }
 
         % Ejercicio 7
